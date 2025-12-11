@@ -1,0 +1,104 @@
+/* 1. RESET GLOBAL + FONDO */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f0f2f5;
+}
+
+/* 2. ROOT: centrado absoluto */
+#root {
+  min-height: 100vh;
+  width: 100vw;
+  display: grid;
+  place-items: center;
+}
+
+/* 3. CONTENEDOR DEL CHAT */
+.chat-container {
+  width: 100%;
+  max-width: 600px;
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  margin: 20px; /* separación en móviles */
+}
+
+/* 4. TÍTULO */
+h1 {
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: sans-serif;
+}
+
+/* 5. CAJA DE MENSAJES */
+.chat-box {
+  border: 1px solid #ddd;
+  height: 400px;
+  overflow-y: auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* 6. BURBUJAS */
+.mensaje {
+  padding: 12px 18px;
+  border-radius: 18px;
+  max-width: 75%;
+  line-height: 1.5;
+  font-family: sans-serif;
+  font-size: 15px;
+}
+
+.usuario {
+  align-self: flex-end;
+  background-color: #0084ff;
+  color: white;
+  border-bottom-right-radius: 4px;
+}
+
+.ia {
+  align-self: flex-start;
+  background-color: #e4e6eb;
+  color: black;
+  border-bottom-left-radius: 4px;
+}
+
+.fuente {
+  display: block;
+  font-size: 0.7em;
+  margin-top: 5px;
+  opacity: 0.7;
+}
+
+/* 7. FORMULARIO */
+form {
+  display: flex;
+  gap: 10px;
+}
+
+input {
+  flex: 1;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 25px;
+  outline: none;
+}
+
+button {
+  padding: 10px 25px;
+  background-color: #0084ff;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+}
