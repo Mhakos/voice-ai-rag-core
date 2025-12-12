@@ -1,9 +1,18 @@
--- Activa la extensión para guardar embeddings (vectores)
+-- 1. Habilitar la extensión de vectores (IA)
 CREATE EXTENSION IF NOT EXISTS vector;
 
--- Crea la tabla para tus documentos (Nivel 2)
+-- 2. Crear tabla de documentos (Conocimiento)
 CREATE TABLE IF NOT EXISTS knowledge_base (
     id SERIAL PRIMARY KEY,
     content TEXT,
-    embedding vector(1536) -- Dimensión estándar de OpenAI
+    embedding vector(384)
+);
+
+-- 3. Crear tabla de Logs (ESTA ES LA QUE FALTABA)
+CREATE TABLE IF NOT EXISTS query_logs (
+    id SERIAL PRIMARY KEY,
+    pregunta TEXT,
+    respuesta TEXT,
+    fuente TEXT,
+    fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
