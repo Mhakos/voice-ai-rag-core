@@ -2,4 +2,4 @@ echo "node_modules" > .gitignore
 echo "dist" >> .gitignore
 echo ".env" >> .gitignore
 echo "pgdata" >> .gitignore
-echo ".DS_Store" >> .gitignore
+echo ".DS_Store" >> .gitignore.env

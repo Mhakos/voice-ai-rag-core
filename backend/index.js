@@ -117,5 +117,7 @@ app.post('/chat', async (req, res) => {
 });
 
 app.listen(3000, () => {
+    // --- DIAGNÓSTICO DE INICIO ---
+    console.log("🔑 ESTADO DE LA API KEY:", process.env.HF_API_KEY ? "✅ Cargada Correctamente" : "❌ VACÍA / NO ENCONTRADA");
     console.log('--- 🛡️ RAG Brain con Observabilidad listo en puerto 3000 ---');
 });
