@@ -1,49 +1,40 @@
-# 🧠 Cerebro Digital CMM - Voice AI Ready Architecture
+# 🎙️ Voice AI RAG Core - Architecture Demo
 
-Este proyecto implementa una arquitectura **RAG (Retrieval-Augmented Generation)** contenerizada para la gestión de conocimiento técnico y cumplimiento normativo (ISO 27001).
+> **Status:** Production Ready (MVP)  
+> **Role:** AI Engineer / Full Stack Developer
 
-Diseñado como el núcleo ("Core") para un sistema de **Voice AI**, permitiendo la ingesta de documentos técnicos, vectorización semántica y recuperación de contexto de baja latencia.
+Este repositorio aloja el núcleo ("Core") de un asistente de IA conversacional con capacidades de **Voz (Voice AI)** y Memoria a Largo Plazo (**RAG**), diseñado para entornos corporativos de alto cumplimiento (ISO 27001).
 
-## 🚀 Tech Stack & Arquitectura
+![Demo Voice AI](Evidencia.png)
 
-* **Core Backend:** Node.js (Express), JavaScript ES6+.
-* **AI & LLM Ops:** Hugging Face Inference API, Prompt Engineering (System Prompts).
-* **Vector Database:** PostgreSQL + `pgvector` (Búsqueda por Distancia de Coseno).
-* **Pipeline ETL:** Procesamiento de binarios (PDF), limpieza y "Chunking" dinámico.
-* **Frontend:** React.js + Vite (Interfaz de Chat Moderna).
-* **Infraestructura:** Docker & Docker Compose (Microservicios aislados).
-* **Observabilidad:** Sistema de Logging transaccional en SQL.
+## ⚡ Voice AI Pipeline (Arquitectura)
 
-## 🛠️ Instalación y Despliegue
+El sistema implementa un flujo de baja latencia para interacción por voz, cumpliendo con el ciclo moderno de IA:
 
-1.  **Clonar el repositorio:**
-    ```bash
-    git clone [https://github.com/Mhakos/voice-ai-rag-core.git](https://github.com/Mhakos/voice-ai-rag-core.git)
-    cd voice-ai-rag-core
-    ```
+1.  **ASR / STT (Speech-to-Text):** Captura de audio en tiempo real y transcripción mediante *Web Speech API* (preparado para migración a OpenAI Whisper).
+2.  **Reasoning Engine (LLM):** Procesamiento semántico con modelos Open Source (`Zephyr-7b-beta`) vía Hugging Face Inference.
+3.  **RAG Context retrieval:** Recuperación de información técnica desde **PostgreSQL (pgvector)** para evitar alucinaciones.
+4.  **TTS (Text-to-Speech):** Síntesis de voz automática para respuesta audible al usuario.
 
-2.  **Configurar Variables de Entorno:**
-    Crear un archivo `.env` en la raíz:
-    ```env
-    HF_API_KEY=tu_clave_de_hugging_face
-    DATABASE_URL=postgres://usuario_ia:password_seguro@db:5432/ia_database
-    ```
+## 🛠️ Tech Stack
 
-3.  **Desplegar con Docker:**
-    ```bash
-    docker compose up --build
-    ```
+* **Frontend:** React.js + Vite + Web Speech API (Native STT/TTS).
+* **Backend:** Node.js (Express) con manejo de errores y Fallback robusto.
+* **Database:** PostgreSQL 16 + `pgvector` (Vector Store).
+* **Infrastructure:** Docker & Docker Compose (Microservicios).
+* **Observability:** SQL Transactional Logging (Auditoría de preguntas/respuestas).
 
-4.  **Ingestar Conocimiento (ETL):**
-    ```bash
-    docker exec -it ia_brain_backend node ingest.js
-    ```
+## 🚀 Instalación y Despliegue
 
-## 🔮 Roadmap para Voice AI (Próximos Pasos)
+### 1. Requisitos Previos
+* Docker & Docker Compose
+* Node.js v18+ (para desarrollo local)
 
-* [ ] Integración de **STT (Speech-to-Text)** usando OpenAI Whisper.
-* [ ] Implementación de **TTS (Text-to-Speech)** para respuestas de audio.
-* [ ] Conexión con Telefonía (Twilio/SIP) para manejo de llamadas.
+### 2. Configuración
+Clona el repositorio y configura las variables de entorno:
 
----
+```bash
+git clone [https://github.com/Mhakos/voice-ai-rag-core.git](https://github.com/Mhakos/voice-ai-rag-core.git)
+cd voice-ai-rag-core
+
 Desarrollado por **Mhakos Pavone**.
