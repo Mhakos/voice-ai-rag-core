@@ -1,5 +1,6 @@
-echo "node_modules" > .gitignore
-echo "dist" >> .gitignore
-echo ".env" >> .gitignore
-echo "pgdata" >> .gitignore
-echo ".DS_Store" >> .gitignore.env
+node_modules
+dist
+.env
+pgdata
+.DS_Store
+coverage
